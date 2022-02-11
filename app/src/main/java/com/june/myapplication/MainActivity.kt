@@ -10,12 +10,6 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater) // 바인딩 객체 획득
         setContentView(binding.root) // 액티비티 화면 출력
 
-        binding.button.setOnClickListener {
-            if (binding.textView.text == "textView") {
-                binding.textView.text = "onClick"
-            } else {
-                binding.textView.text = "textView"
-            }
-        }
+
     }
 }
