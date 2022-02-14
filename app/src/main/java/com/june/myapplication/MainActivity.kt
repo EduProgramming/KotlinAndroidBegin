@@ -11,11 +11,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root) // 액티비티 화면 출력
 
         binding.button.setOnClickListener {
-            if (binding.textView.text == "textView") {
-                binding.textView.text = "onClick"
-            } else {
-                binding.textView.text = "textView"
-            }
+            val dialog = CustomDialog(this)
+            dialog.showDialog()
+            dialog.setOnClickListener(object: CustomDialog.OnDialogClickListener {
+                override fun onClicked(name: String) {
+                    binding.textView.text = name
+                }
+
+            })
         }
     }
 }
